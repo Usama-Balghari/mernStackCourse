@@ -1,7 +1,7 @@
 
 // BookingDetailStep.js
 import React from "react";
-import { Field } from "formik";
+import { Field , ErrorMessage } from "formik";
 import { TextField,
     // FormControlLabel, RadioGroup, Radio 
     } from "@mui/material";
@@ -16,6 +16,13 @@ const BookingDetailStep = ({ formProps }) => {
         fullWidth
         // Add other props and error handling using formProps
       />
+        <ErrorMessage
+       name="to"
+       component="div"
+       className="error"
+       style={{ color: 'red', fontSize: '12px', marginTop: '4px' }}
+/>
+
       <Field
         as={TextField}
         name="from"
@@ -23,6 +30,12 @@ const BookingDetailStep = ({ formProps }) => {
         fullWidth
         // Add other props and error handling using formProps
       />
+       <ErrorMessage
+       name="from"
+       component="div"
+       className="error"
+       style={{ color: 'red', fontSize: '12px', marginTop: '4px' }}
+/>
       <Field
         as={TextField}
         name="adult"

@@ -2,11 +2,13 @@
 import React, { useState } from "react";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
-import { Stepper, Step, StepLabel, Button } from "@mui/material";
+import { Stepper, Step, StepLabel, Button, Alert } from "@mui/material";
 import BookingDetailStep from "./BookingDetailStep.js";
 import FlightDetailStep from "./FlightDetailStep .js";
 import TravellerInfoStep from "./TravellerInfoStep .js";
 import ConfirmBookingStep from "./ConfirmBookingStep .js";
+
+
 
 const steps = [
   "Booking Details",
@@ -45,39 +47,29 @@ const FormInitialValues = {
 };
 
 const FormValidationSchema = Yup.object().shape({
-  gender: Yup.string().required("Required"),
-  name: Yup.string().required("Required"),
-  surName: Yup.string().required("Required"),
-  dob: Yup.string().required("Required"),
-  email: Yup.string().required("Required"),
-  phone: Yup.string().required("Required"),
-  pnr: Yup.string().required("Required"),
-  ticket: Yup.string().required("Required"),
+
   to: Yup.string().required("Required"),
   from: Yup.string().required("Required"),
-  issueBy: Yup.string().required("Required"),
-  ledger: Yup.string().required("Required"),
-  journeyDate: Yup.string().required("Required"),
-  returnDate: Yup.string().required("Required"),
   adults: Yup.string().required("Required"),
   child: Yup.string().required("Required"),
   infant: Yup.string().required("Required"),
-  basicFare: Yup.string().required("Required"),
-  taxes: Yup.string().required("Required"),
-  sc: Yup.string().required("Required"),
-  discount: Yup.string().required("Required"),
-  totalAmount: Yup.string().required("Required"),
+
 });
+
 
   const handleSubmitForm = () => {
    console.log("Form Is Submitted")
+   alert("Form Is Submitted")
   };
 
 const FlightBookingForm = () => {
+  
   const [activeStep, setActiveStep] = useState(0);
 
   const handleNext = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep + 1);
+
+      setActiveStep((prevActiveStep) => prevActiveStep + 1);
+  
   };
 
   const handleBack = () => {
@@ -94,8 +86,6 @@ const FlightBookingForm = () => {
         return <TravellerInfoStep formProps={formProps} />;
       case 3:
         return <ConfirmBookingStep formProps={formProps} />;
-      default:
-        return null;
     }
   };
 
@@ -130,7 +120,7 @@ const FlightBookingForm = () => {
                 onClick={handleNext}
                 sx={{ mt: 3 }}
               >
-                {activeStep === steps.length - 1 ? "Confirm" : "Next"}
+                {activeStep === steps.length ? "Confirm" : "Next"}
               </Button>
             </div>
           </div>
