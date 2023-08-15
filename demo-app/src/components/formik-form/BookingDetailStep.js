@@ -38,18 +38,30 @@ const BookingDetailStep = ({ formProps }) => {
 />
       <Field
         as={TextField}
-        name="adult"
+        name="adults"
         label="Adult"
         fullWidth
         // Add other props and error handling using formProps
       />
+      <ErrorMessage
+       name="adults"
+       component="div"
+       className="error"
+       style={{ color: 'red', fontSize: '12px', marginTop: '4px' }}
+/>
       <Field
         as={TextField}
-        name="children"
+        name="child"
         label="Children"
         fullWidth
         // Add other props and error handling using formProps
       />
+      <ErrorMessage
+       name="child"
+       component="div"
+       className="error"
+       style={{ color: 'red', fontSize: '12px', marginTop: '4px' }}
+/>
       <Field
         as={TextField}
         name="infant"
@@ -57,6 +69,12 @@ const BookingDetailStep = ({ formProps }) => {
         fullWidth
         // Add other props and error handling using formProps
       />
+      <ErrorMessage
+       name="infant"
+       component="div"
+       className="error"
+       style={{ color: 'red', fontSize: '12px', marginTop: '4px' }}
+/>
     
       {/* Add other fields for To, journey date, trip type, and traveller number */}
     </div>

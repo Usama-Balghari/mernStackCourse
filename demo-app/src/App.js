@@ -3,7 +3,9 @@
 // import { Counter } from './components/Counter';
 
 // import AdmissionForm from "./components/AdmissionForm";
-import FinalComponent from "./AdmissionForm/FinalComponent"
+// import FinalComponent from "./AdmissionForm/FinalComponent";
+// import Component1 from "./components/ContextApi/Component1.js"
+import FlightBookingForm from "./components/formik-form/FlightBookingForm.js"
 
 function App() {
   
@@ -11,7 +13,9 @@ function App() {
    <>
    {/* <SignIn/> */}
    {/* <Counter/> */}
-   <FinalComponent/>
+   {/* <FinalComponent/> */}
+   {/* <Component1/> */}
+   <FlightBookingForm/>
    </>
   );
 }

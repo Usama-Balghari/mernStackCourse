@@ -1,6 +1,6 @@
 // FlightDetailStep.js
 import React from "react";
-import { Field } from "formik";
+import { Field, ErrorMessage } from "formik";
 import { TextField } from "@mui/material";
 
 const FlightDetailStep = ({ formProps }) => {
@@ -8,11 +8,17 @@ const FlightDetailStep = ({ formProps }) => {
     <div>
       <Field
         as={TextField}
-        name="airlineName"
+        name="airline"
         label="Airline Name"
         fullWidth
         // Add other props and error handling using formProps
       />
+       <ErrorMessage
+       name="airline"
+       component="div"
+       className="error"
+       style={{ color: 'red', fontSize: '12px', marginTop: '4px' }}
+/>
       {/* Add other fields for flight fare, etc. */}
     </div>
   );
